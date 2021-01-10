@@ -3,7 +3,7 @@ Type: Package
 Title: Learning to create R packages
 Version: 0.1.0
 Author: Pawel Warchol, Bartlomiej Wolas, Karol Szpyt
-Maintainer: Pawel Warchol, Bartlomiej Wolas, Karol Szpyt
+Maintainer: The package maintainer <karolo.szpyt@gmail.com>
 Description: Learning to create R packages
 License: GPL-3
 Encoding: UTF-8
