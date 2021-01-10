@@ -13,6 +13,10 @@
 #' \item{pars1}{Parameters of first distribution}
 #' \item{fam2}{Name of second distribution}
 #' \item{pars2}{Parameters of second distribution}
+#' @examples
+#' mix1 <- DistMixing(100, "norm", list(mean=0, sd=10), "norm", c(sd = 2,mean = 10), p=0.7)
+#' print(mix1)
+#' summary(mix1)
 
 
 DistMixing <- function(n, family_1, par_1, family_2, par_2, p = .5) UseMethod("DistMixing")

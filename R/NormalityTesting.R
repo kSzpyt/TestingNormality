@@ -10,6 +10,10 @@
 #'     \item KolmogorovSmirnov
 #'     \item PearsonChiSquare
 #' }
+#' @examples
+#' tests <- NormalityTesting(mix1$vec)
+#' print(tests)
+#' NormalityTesting(mix1)
 
 
 NormalityTesting <- function(x) UseMethod("NormalityTesting")

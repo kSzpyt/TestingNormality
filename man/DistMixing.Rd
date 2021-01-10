@@ -32,3 +32,8 @@ This function is used to generate samples from two distributions and combining t
 \details{
 asbnfkjasbfkjasbdf
 }
+\examples{
+mix1 <- DistMixing(100, "norm", list(mean=0, sd=10), "norm", c(sd = 2,mean = 10), p=0.7)
+print(mix1)
+summary(mix1)
+}
