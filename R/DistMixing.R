@@ -1,3 +1,5 @@
+DistMixing <- function(n, family_1, par_1, family_2, par_2, p = .5) UseMethod("DistMixing")
+
 #' Sampling from two distributions
 #' @export
 #' @description This function is used to generate samples from two distributions and combining them.
@@ -17,10 +19,6 @@
 #' mix1 <- DistMixing(100, "norm", list(mean=0, sd=10), "norm", c(sd = 2,mean = 10), p=0.7)
 #' print(mix1)
 #' summary(mix1)
-
-
-DistMixing <- function(n, family_1, par_1, family_2, par_2, p = .5) UseMethod("DistMixing")
-
 
 DistMixing.default <- function(n, family_1, par_1, family_2, par_2, p = .5){
 
