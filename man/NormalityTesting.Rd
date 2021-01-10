@@ -25,8 +25,3 @@ Return data frame with results fasfasfasfasfasf
 \details{
 asbnfkjasbfkjasbdf
 }
-\examples{
-tests <- NormalityTesting(mix1$vec)
-print(tests)
-NormalityTesting(mix1)
-}

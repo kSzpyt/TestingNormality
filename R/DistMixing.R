@@ -1,7 +1,4 @@
-DistMixing <- function(n, family_1, par_1, family_2, par_2, p = .5) UseMethod("DistMixing")
-
 #' Sampling from two distributions
-#' @export
 #' @description This function is used to generate samples from two distributions and combining them.
 #' @param n sample length
 #' @param family_1 name of the fist distribution
@@ -15,10 +12,10 @@ DistMixing <- function(n, family_1, par_1, family_2, par_2, p = .5) UseMethod("D
 #' \item{pars1}{Parameters of first distribution}
 #' \item{fam2}{Name of second distribution}
 #' \item{pars2}{Parameters of second distribution}
-#' @examples
-#' mix1 <- DistMixing(100, "norm", list(mean=0, sd=10), "norm", c(sd = 2,mean = 10), p=0.7)
-#' print(mix1)
-#' summary(mix1)
+#'
+#' @export
+DistMixing <- function(n, family_1, par_1, family_2, par_2, p = .5) UseMethod("DistMixing")
+
 
 DistMixing.default <- function(n, family_1, par_1, family_2, par_2, p = .5){
 
@@ -52,3 +49,29 @@ DistMixing.default <- function(n, family_1, par_1, family_2, par_2, p = .5){
   return(res)
 }
 
+print.DistMixing <- function(x){
+  # dodawanie sprawdzania czy x jest klasy distmixing
+  cat("Mix of following distributions:\n")
+  print(x$fam1)
+  cat("With following parameters:\n")
+  print(x$pars1)
+  cat("and distribution:\n")
+  print(x$fam2)
+  cat("With following parameters:\n")
+  print(x$pars2)
+  cat("Generated sample:\n")
+  print(x$vec)
+}
+
+summary.DistMixing <- function(x){
+
+  meanValue <- mean(x$vec)
+  sdValue <- sd(x$vec)
+  minValue <- min(x$vec)
+  maxValue <- max(x$vec)
+  kurtosisValue <- moments::kurtosis(x$vec)
+  skewValue <- moments::skewness(x$vec)
+
+  round(data.frame(meanValue, sdValue, minValue, maxValue, kurtosisValue, skewValue),3)
+
+}

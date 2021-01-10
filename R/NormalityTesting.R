@@ -1,5 +1,3 @@
-NormalityTesting <- function(x) UseMethod("NormalityTesting")
-
 #' Return data frame with results fasfasfasfasfasf
 #' @export
 #' @param x sample to test
@@ -12,10 +10,8 @@ NormalityTesting <- function(x) UseMethod("NormalityTesting")
 #'     \item KolmogorovSmirnov
 #'     \item PearsonChiSquare
 #' }
-#' @examples
-#' tests <- NormalityTesting(mix1$vec)
-#' print(tests)
-#' NormalityTesting(mix1)
+#' @export
+NormalityTesting <- function(x) UseMethod("NormalityTesting")
 
 NormalityTesting.default <- function(x){
 
