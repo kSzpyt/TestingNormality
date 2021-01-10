@@ -52,29 +52,3 @@ DistMixing.default <- function(n, family_1, par_1, family_2, par_2, p = .5){
   return(res)
 }
 
-print.DistMixing <- function(x){
-  # dodawanie sprawdzania czy x jest klasy distmixing
-  cat("Mix of following distributions:\n")
-  print(x$fam1)
-  cat("With following parameters:\n")
-  print(x$pars1)
-  cat("and distribution:\n")
-  print(x$fam2)
-  cat("With following parameters:\n")
-  print(x$pars2)
-  cat("Generated sample:\n")
-  print(x$vec)
-}
-
-summary.DistMixing <- function(x){
-
-  meanValue <- mean(x$vec)
-  sdValue <- sd(x$vec)
-  minValue <- min(x$vec)
-  maxValue <- max(x$vec)
-  kurtosisValue <- moments::kurtosis(x$vec)
-  skewValue <- moments::skewness(x$vec)
-
-  round(data.frame(meanValue, sdValue, minValue, maxValue, kurtosisValue, skewValue),3)
-
-}
